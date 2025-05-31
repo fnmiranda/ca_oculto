@@ -1,1 +1,533 @@
-inicio
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação Militar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #1a2a0f, #0d1607);
+            color: #e0e0d0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a2a0f"/><path d="M0 0L100 100M100 0L0 100" stroke="%233a4a1f" stroke-width="1"/></svg>');
+        }
+        
+        /* Estilo do Header */
+        header {
+            background: linear-gradient(to bottom, #2a3a1f, #1a2a0f);
+            padding: 1rem;
+            border-bottom: 3px solid #8c7b3f;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: #8c7b3f;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #c5b67a;
+        }
+        
+        .logo-icon:before {
+            content: "⚔️";
+            font-size: 24px;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            color: #e0e0d0;
+        }
+        
+        .logo-text span {
+            color: #8c7b3f;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #e0e0d0;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #8c7b3f;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            background: rgba(140, 123, 63, 0.2);
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        /* Estilo do Main */
+        main {
+            flex: 1;
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .mission-briefing {
+            background: rgba(26, 42, 15, 0.7);
+            border: 2px solid #8c7b3f;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-briefing:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #1a2a0f, #8c7b3f, #1a2a0f);
+        }
+        
+        .mission-briefing h2 {
+            color: #c5b67a;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid #8c7b3f;
+            padding-bottom: 0.5rem;
+        }
+        
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .mission-text {
+            line-height: 1.6;
+        }
+        
+        .mission-text p {
+            margin-bottom: 1rem;
+        }
+        
+        .mission-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-card {
+            background: rgba(42, 58, 31, 0.8);
+            border: 1px solid #8c7b3f;
+            border-radius: 4px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .stat-card h4 {
+            color: #c5b67a;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        
+        .stat-card p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e0e0d0;
+        }
+        
+        .mission-image {
+            background: linear-gradient(to bottom right, #2a3a1f, #1a2a0f);
+            border: 1px solid #8c7b3f;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .mission-image:before {
+            content: "MAPA DA OPERAÇÃO";
+            position: absolute;
+            color: rgba(140, 123, 63, 0.2);
+            font-size: 3rem;
+            font-weight: bold;
+            transform: rotate(-45deg);
+        }
+        
+        .soldiers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .soldier-card {
+            background: rgba(26, 42, 15, 0.7);
+            border: 2px solid #8c7b3f;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .soldier-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .soldier-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #1a2a0f, #8c7b3f, #1a2a0f);
+        }
+        
+        .soldier-rank {
+            font-size: 0.8rem;
+            color: #c5b67a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .soldier-name {
+            font-size: 1.3rem;
+            color: #e0e0d0;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .soldier-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            border: 3px solid #8c7b3f;
+            background: linear-gradient(to bottom, #3a4a2f, #2a3a1f);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+        }
+        
+        .soldier-info {
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            color: #b0b0a0;
+            line-height: 1.5;
+        }
+        
+        /* Estilo do Footer */
+        footer {
+            background: linear-gradient(to top, #1a2a0f, #0d1607);
+            padding: 2rem 1rem;
+            border-top: 3px solid #8c7b3f;
+            margin-top: 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: #c5b67a;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section h3:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #8c7b3f;
+        }
+        
+        .footer-section p, .footer-section li {
+            color: #b0b0a0;
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li:before {
+            content: "•";
+            color: #8c7b3f;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            width: 30px;
+            height: 30px;
+            background: #8c7b3f;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(140, 123, 63, 0.3);
+            color: #8c7b3f;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .mission-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">COMANDO <span>MILITAR</span></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Operações</a></li>
+                    <li><a href="#">Equipe</a></li>
+                    <li><a href="#">Equipamentos</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main -->
+    <main>
+        <section class="mission-briefing">
+            <h2>Briefing da Operação: Escudo Verde</h2>
+            <div class="mission-content">
+                <div class="mission-text">
+                    <p>A Operação Escudo Verde é uma missão estratégica de defesa das fronteiras nacionais contra forças hostis que ameaçam a soberania do território.</p>
+                    <p>Nossa missão é estabelecer pontos de controle nas regiões críticas e neutralizar qualquer ameaça com precisão e eficiência máxima.</p>
+                    <p>O sucesso desta operação depende da coordenação entre todas as unidades e da execução perfeita do plano tático estabelecido.</p>
+                    
+                    <div class="mission-stats">
+                        <div class="stat-card">
+                            <h4>Unidades Ativas</h4>
+                            <p>24</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Duração Estimada</h4>
+                            <p>72h</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Área de Operação</h4>
+                            <p>240 km²</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Nível de Risco</h4>
+                            <p>ALTO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-image">
+                    <!-- Imagem do mapa seria inserida aqui -->
+                </div>
+            </div>
+        </section>
+        
+        <section class="soldiers-container">
+            <div class="soldier-card">
+                <div class="soldier-rank">Capitão</div>
+                <div class="soldier-name">Silva, R.</div>
+                <div class="soldier-photo">🪖</div>
+                <div class="soldier-info">
+                    Comandante da operação. 15 anos de experiência em combate. Especialista em estratégias de defesa.
+                </div>
+            </div>
+            
+            <div class="soldier-card">
+                <div class="soldier-rank">Tenente</div>
+                <div class="soldier-name">Santos, M.</div>
+                <div class="soldier-photo">🎖️</div>
+                <div class="soldier-info">
+                    Líder do esquadrão Alpha. Especialista em reconhecimento e operações noturnas.
+                </div>
+            </div>
+            
+            <div class="soldier-card">
+                <div class="soldier-rank">Sargento</div>
+                <div class="soldier-name">Oliveira, A.</div>
+                <div class="soldier-photo">🔫</div>
+                <div class="soldier-info">
+                    Especialista em armamentos pesados. Responsável pelo suporte de fogo da equipe.
+                </div>
+            </div>
+            
+            <div class="soldier-card">
+                <div class="soldier-rank">Cabo</div>
+                <div class="soldier-name">Costa, F.</div>
+                <div class="soldier-photo">💣</div>
+                <div class="soldier-info">
+                    Especialista em explosivos e demolição. Responsável pela remoção de obstáculos.
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>O Comando Militar é uma unidade de elite especializada em operações estratégicas de defesa nacional. Nossa missão é proteger a soberania e a integridade territorial com excelência operacional.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Política de Segurança</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">Treinamento</a></li>
+                    <li><a href="#">Galeria</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>Base Militar Alfa, Setor 7</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>+55 (11) 3400-5678</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>comando@operacoesmilitares.mil.br</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div>24 horas / 7 dias</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 Comando Militar. Todos os direitos reservados. | Operação Escudo Verde
+        </div>
+    </footer>
+</body>
+</html>
