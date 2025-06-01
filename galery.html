@@ -6,6 +6,7 @@
     <title>Galeria de Eventos - Instituto Militar de Engenharia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles_galery.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
@@ -20,9 +21,15 @@
                     <span class="logo-sub">Galeria de Eventos</span>
                 </div>
             </div>
-            <a href="index.html" class="back-button">
+            <!-- <a href="index.html" class="back-button">
                 <i class="fas fa-arrow-left"></i> Voltar
-            </a>
+            </a> -->
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="ca.html">Organograma</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     
@@ -206,7 +213,7 @@
         const events = {
             'formatura': {
                 title: 'Formatura dos Alunos',
-                image: 'assets/galeria/formatura_5_ano.png',
+                image: 'assets/galeria/formatura_5_ano_2.png',
                 description: 'A solenidade de formatura do Instituto Militar de Engenharia marca a conclusão do ciclo de formação de engenheiros militares. O evento conta com a presença de autoridades militares, familiares e convidados, sendo realizado no pátio principal do IME. Durante a cerimônia, os formandos recebem suas espadas e diplomas, simbolizando sua entrada no oficialato do Exército Brasileiro e na comunidade de engenheiros do país.',
                 location: 'Pátio Principal do IME - Rio de Janeiro',
                 participants: 'Formandos, autoridades militares e familiares',
@@ -230,7 +237,7 @@
             },
             'estagio-selva': {
                 title: 'Estágio de Guerra na Selva',
-                image: '/assets/galeria/selva.png',
+                image: '/assets/galeria/guerra_na_selva.png',
                 description: 'Estágio realizado no CIGS (Centro de Instrução de Guerra na Selva) em Manaus, onde os alunos vivenciam técnicas de sobrevivência, movimentação e combate em ambiente de selva. O treinamento inclui instruções de orientação, armadilhas, patrulhas e operações especiais em ambiente amazônico.',
                 location: 'CIGS - Manaus/AM',
                 participants: 'Alunos do IME',
@@ -246,7 +253,7 @@
             },
             'estagio-montanha': {
                 title: 'Estágio de Montanha',
-                image: '/assets/galeria/montanha.png',
+                image: '/assets/galeria/montanha_2.png',
                 description: 'Estágio realizado no Centro de Instrução de Montanha (CIM) em Juiz de Fora/MG, onde os alunos aprendem técnicas de progressão em terreno montanhoso, escalada em rocha, rapel, sobrevivência em altitude e primeiros socorros em ambiente de montanha.',
                 location: 'Centro de Instrução de Montanha - Juiz de Fora/MG',
                 participants: 'Alunos do IME selecionados',
