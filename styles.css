@@ -199,38 +199,6 @@ nav a.active:after {
     gap: 20px;
 }
 
-.btn {
-    padding: 12px 30px;
-    border-radius: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-    border: 2px solid var(--gold);
-}
-
-.btn-primary {
-    background: var(--gold);
-    color: var(--dark-green);
-}
-
-.btn-primary:hover {
-    background: var(--light-gold);
-    transform: translateY(-3px);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--light-gold);
-}
-
-.btn-secondary:hover {
-    background: rgba(140, 123, 63, 0.2);
-    transform: translateY(-3px);
-}
-
 /* Main Content */
 main {
     flex: 1;
@@ -370,7 +338,9 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
+
 
 .course-card {
     background: rgba(26, 42, 15, 0.7);
@@ -417,6 +387,34 @@ main {
     color: var(--cream);
     line-height: 1.6;
 }
+
+.about-ca {
+    background: rgba(26, 42, 15, 0.7);
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.about-text-ca h3 {
+    color: var(--light-gold);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.about-text-ca p {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    width: 70em;
+}
+
 
 .stats-section {
     margin: 4rem 0;
