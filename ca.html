@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corpo de Alunos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styleca.css">
@@ -29,7 +30,8 @@
     .level-column {
       flex-direction: row;
       width: 100%;
-      justify-content: space-evenly;
+      justify-content: center;
+      align-items: center;
       margin: 20px 0;
     }
     .node {
@@ -56,7 +58,28 @@
         display: flex;
         gap: 20px;
         flex-direction: row;
+        
     }
+
+    .teste-main {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+    .tree {
+        transform: scale(0.7); /* ou outro valor entre 0.3 e 1 */
+        transform-origin: top center;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .tree {
+        transform: scale(0.35);
+        transform-origin: top center;
+    }
+    }
+
   </style>
 </head>
 <body>
@@ -72,21 +95,22 @@
                     <span class="logo-main">Instituto Militar de Engenharia</span>
                     <span class="logo-sub">Hierarquia Militar</span>
                 </div>
+                <div class="logo-icon">
+                    <img class="imagem-ajustada" src="https://acesso.dgp.eb.mil.br/img/logo-dgp.png" alt="">
+                </div>
             </div>
             <div class="header-buttonLogo">
                 <a href="index.html" class="back-button">
                     <i class="fas fa-arrow-left"></i> Voltar
                 </a>
-                <div class="logo-icon">
-                    <img class="imagem-ajustada" src="https://acesso.dgp.eb.mil.br/img/logo-dgp.png" alt="">
-                </div>
+                
             </div>
         </div>
     </header>
-    <main>
-        <div  class="section-title">
-            <h2>Corpo de Alunos</h2>
-        </div>
+    <div  class="section-title">
+        <h2>Corpo de Alunos</h2>
+    </div>
+    <main class="teste-main">
         
         <div class="tree">
           <!-- Nível 1 -->
@@ -106,25 +130,18 @@
             </div>
           </div>
         
-          <!-- Conexão -->
 
-          <!-- Nível 2 -->
-          <div class="level">
-            
-            
-            
-          </div>
           <!-- Nível 3 -->
            <div class="level">
                <div class="level-column">
                     <div class="node" >
-                        <img src="assets/postos/cap.jpg" alt="1° Seção">
-                        <div class="name">Chefe 1° Seção Cap Keller</div>
+                        <img src="assets/postos/cap.jpg" alt="1ª Seção">
+                        <div class="name">Chefe 1ª Seção Cap Marcelo</div>
                     </div>
                     <div class="level">
                         <div class="node">
-                          <img src="assets/postos/1_sarjento.png" alt="1° Seção">
-                          <div class="name">Aux 1° Seção 1º Sgt </div>
+                          <img src="assets/postos/1_sarjento.png" alt="1ª Seção">
+                          <div class="name">Aux 1ª Seção 1º Sgt Danilo</div>
                         </div>
                         <div class="node">
                           <img src="assets/postos/1_sarjento.png" alt="2ª Seção">
@@ -140,12 +157,12 @@
                     </div>
                 <div class="level">
                     <div class="node">
-                      <img src="assets/postos/1_sarjento.png" alt="1° Seção">
+                      <img src="assets/postos/1_sarjento.png" alt="1ª Seção">
                       <div class="name">Aux 3ª Seção 1º Sgt De Paula</div>
                     </div>
                     <div class="node">
                       <img src="assets/postos/1_sarjento.png" alt="2ª Seção">
-                      <div class="name">Aux 3ª Seção 1º Sgt Vinicios Andrade</div>
+                      <div class="name">Aux 3ª Seção 1º Sgt Vinicius Andrade</div>
                     </div>
                 </div>
 
@@ -153,21 +170,21 @@
 
                <div class="level-column">
                 <div class="node" >
-                    <img src="assets/postos/cap.jpg" alt="4ª Seção">
-                    <div class="name">Chefe 4ª Seção Cap Moratto</div>
+                    <img src="assets/postos/1_sarjento.png" alt="4ª Seção">
+                    <div class="name">Chefe 4ª Seção 1º Sgt Fabrício</div>
                 </div>
                 <div class="level">
                     <div class="node">
-                      <img src="assets/postos/1_sarjento.png" alt="1° Seção">
-                      <div class="name">Aux 4ª Seção 1º Sgt</div>
+                      <img src="assets/postos/1_sarjento.png" alt="1ª Seção">
+                      <div class="name">Enc Mat 1º Sgt De Medeiros</div>
                     </div>
                     <div class="node">
                       <img src="assets/postos/1_sarjento.png" alt="2ª Seção">
-                      <div class="name">Aux 4ª Seção 1º Sgt</div>
+                      <div class="name">Aux 4ª Seção 1º Sgt Pedro</div>
                     </div>
                     <div class="node">
                       <img src="assets/postos/2_sarjento.png" alt="2ª Seção">
-                      <div class="name">Aux 4ª Seção 2º Sgt</div>
+                      <div class="name">Aux 4ª Seção 2º Sgt Matheus Lopes</div>
                     </div>
                 </div>
                </div>
@@ -180,35 +197,35 @@
                     <div class="level">
                         <div class="node">
                             <img src="assets/postos/cap.jpg" alt="1ª Cia Alu">
-                            <div class="name">Cmt da 1ª Cia Alu Cap Lemes</div>
+                            <div class="name">Cmt 1ª Cia Alu Cap Lemes</div>
                         </div>
                     </div>
                     <div class="level">
                         <div class="node">
                             <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
-                            <div class="name">1° Ten Roboredo</div>
+                            <div class="name">Cmt 1º Pel 2º ano 1º Ten Roboredo</div>
                         </div>
                         <div class="node">
                             <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
-                            <div class="name">1° Ten Oliveira</div>
+                            <div class="name">Cmt 2º Pel 2º ano 1º Ten Oliveira</div>
                         </div>
                         <div class="node">
                             <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
-                            <div class="name">1° Ten Wellington</div>
+                            <div class="name">Cmt 3º Pel 1º ano 1º Ten Welington</div>
+                        </div>
+                        <div class="node">
+                            <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
+                            <div class="name">Cmt 4º Pel 1º ano 1º Daniel Barbosa</div>
+                        </div>
+                        <div class="node">
+                            <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
+                            <div class="name">Cmt 5º Pel 1º ano 1º Ten Donara Martins</div>
                         </div>
                     </div>
                     <div class="level">
                         <div class="node">
-                            <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
-                            <div class="name">1° Ten Daniel Barbosa</div>
-                        </div>
-                        <div class="node">
-                            <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
-                            <div class="name">1° Ten Donara Martins</div>
-                        </div>
-                        <div class="node">
-                            <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
-                            <div class="name">Aux 1ª Cia 2° Sgt Campos</div>
+                            <img src="assets/postos/2_sarjento.png" alt="1ª Cia Alu">
+                            <div class="name">Aux 1ª Cia 2º Sgt Campos</div>
                         </div>
                     </div>
                 </div>
@@ -218,29 +235,27 @@
                     <div class="level">
                         <div class="node">
                             <img src="assets/postos/cap.jpg" alt="1ª Cia Alu">
-                            <div class="name">Cmt da 2ª Cia Alu Cap Dave</div>
+                            <div class="name">Cmt 2ª Cia Alu Cap Dave</div>
                         </div>
                     </div>
                     <div class="level">
                         <div class="node">
                             <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
-                            <div class="name"> Cmt 3° ano 1° Ten Caribé</div>
+                            <div class="name">Cmt 4º ano 1º Ten Caribe</div>
                         </div>
                         <div class="node">
                             <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
-                            <div class="name">
-                                Cmt 2° Pel 3° ano  1° Ten Pascoal
-                            </div>
+                            <div class="name">Cmt 1º Pel 3º ano 1º Ten Pascoal</div>
+                        </div>
+                        <div class="node">
+                            <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
+                            <div class="name">Cmt 2º Pel 3º ano 1º Ten Gil</div>
                         </div>
                     </div>
                     <div class="level">
                         <div class="node">
-                            <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
-                            <div class="name">Cmt 2° Pel 3° ano 1° Ten Gil</div>
-                        </div>
-                        <div class="node">
-                            <img src="assets/postos/1_ten.png" alt="1ª Cia Alu">
-                            <div class="name">1° Sgt Felipe Silva</div>
+                            <img src="assets/postos/1_sarjento.png" alt="1ª Cia Alu">
+                            <div class="name">Aux 2ª Cia 1º Sgt Philipe Silva</div>
                         </div>
                     </div>
                     
@@ -250,29 +265,29 @@
                 <div class="level-column">
                     <div class="level">
                         <div class="node">
-                            <img src="assets/postos/maj.png" alt="1ª Cia Alu">
-                            <div class="name">Cmt da 3ª Cia Alu Cap Dias </div>
+                            <img src="assets/postos/cap.jpg" alt="1ª Cia Alu">
+                            <div class="name">Cmt 3º Cia Alu Cap Dias</div>
                         </div>
                     </div>
                     <div class="level">
                         <div class="node">
                             <img src="assets/postos/cap.jpg" alt="1ª Cia Alu">
-                            <div class="name">1ª Cia Alu</div>
+                            <div class="name">Cmt 5º ano Cap Ítalo Andrade</div>
                         </div>
                         <div class="node">
                             <img src="assets/postos/cap.jpg" alt="1ª Cia Alu">
-                            <div class="name">1ª Cia Alu</div>
+                            <div class="name">Cmt CForm Cap</div>
                         </div>
                     </div>
 
                     <div class="level">
                         <div class="node">
-                            <img src="assets/postos/cap.jpg" alt="1ª Cia Alu">
-                            <div class="name">1ª Cia Alu</div>
+                            <img src="assets/postos/1_sarjento.png" alt="1ª Cia Alu">
+                            <div class="name">Aux 3ª Cia 1º Sgt</div>
                         </div>
                         <div class="node">
-                            <img src="assets/postos/cap.jpg" alt="1ª Cia Alu">
-                            <div class="name">1ª Cia Alu</div>
+                            <img src="assets/postos/1_sarjento.png" alt="1ª Cia Alu">
+                            <div class="name">Aux 3ª Cia 1º Sgt</div>
                         </div>
                     </div>
                     
