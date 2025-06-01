@@ -3,391 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operação Militar</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(to bottom, #1a2a0f, #0d1607);
-            color: #e0e0d0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a2a0f"/><path d="M0 0L100 100M100 0L0 100" stroke="%233a4a1f" stroke-width="1"/></svg>');
-        }
-        
-        /* Estilo do Header */
-        header {
-            background: linear-gradient(to bottom, #2a3a1f, #1a2a0f);
-            padding: 1rem;
-            border-bottom: 3px solid #8c7b3f;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            position: relative;
-            z-index: 10;
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: #8c7b3f;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid #c5b67a;
-        }
-        
-        .logo-icon:before {
-            content: "⚔️";
-            font-size: 24px;
-        }
-        
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            color: #e0e0d0;
-        }
-        
-        .logo-text span {
-            color: #8c7b3f;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #e0e0d0;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            padding: 8px 15px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        nav a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #8c7b3f;
-            transition: width 0.3s ease;
-        }
-        
-        nav a:hover {
-            background: rgba(140, 123, 63, 0.2);
-        }
-        
-        nav a:hover:after {
-            width: 100%;
-        }
-        
-        /* Estilo do Main */
-        main {
-            flex: 1;
-            padding: 2rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-        
-        .mission-briefing {
-            background: rgba(26, 42, 15, 0.7);
-            border: 2px solid #8c7b3f;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .mission-briefing:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(to right, #1a2a0f, #8c7b3f, #1a2a0f);
-        }
-        
-        .mission-briefing h2 {
-            color: #c5b67a;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1.8rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-            border-bottom: 1px solid #8c7b3f;
-            padding-bottom: 0.5rem;
-        }
-        
-        .mission-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        
-        .mission-text {
-            line-height: 1.6;
-        }
-        
-        .mission-text p {
-            margin-bottom: 1rem;
-        }
-        
-        .mission-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .stat-card {
-            background: rgba(42, 58, 31, 0.8);
-            border: 1px solid #8c7b3f;
-            border-radius: 4px;
-            padding: 1rem;
-            text-align: center;
-        }
-        
-        .stat-card h4 {
-            color: #c5b67a;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-        
-        .stat-card p {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #e0e0d0;
-        }
-        
-        .mission-image {
-            background: linear-gradient(to bottom right, #2a3a1f, #1a2a0f);
-            border: 1px solid #8c7b3f;
-            border-radius: 4px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 300px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .mission-image:before {
-            content: "MAPA DA OPERAÇÃO";
-            position: absolute;
-            color: rgba(140, 123, 63, 0.2);
-            font-size: 3rem;
-            font-weight: bold;
-            transform: rotate(-45deg);
-        }
-        
-        .soldiers-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .soldier-card {
-            background: rgba(26, 42, 15, 0.7);
-            border: 2px solid #8c7b3f;
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .soldier-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-        
-        .soldier-card:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(to right, #1a2a0f, #8c7b3f, #1a2a0f);
-        }
-        
-        .soldier-rank {
-            font-size: 0.8rem;
-            color: #c5b67a;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-        
-        .soldier-name {
-            font-size: 1.3rem;
-            color: #e0e0d0;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-        
-        .soldier-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            border: 3px solid #8c7b3f;
-            background: linear-gradient(to bottom, #3a4a2f, #2a3a1f);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 3rem;
-        }
-        
-        .soldier-info {
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            color: #b0b0a0;
-            line-height: 1.5;
-        }
-        
-        /* Estilo do Footer */
-        footer {
-            background: linear-gradient(to top, #1a2a0f, #0d1607);
-            padding: 2rem 1rem;
-            border-top: 3px solid #8c7b3f;
-            margin-top: 2rem;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .footer-section h3 {
-            color: #c5b67a;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1.2rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .footer-section h3:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: #8c7b3f;
-        }
-        
-        .footer-section p, .footer-section li {
-            color: #b0b0a0;
-            margin-bottom: 0.8rem;
-            line-height: 1.5;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section li:before {
-            content: "•";
-            color: #8c7b3f;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .contact-icon {
-            width: 30px;
-            height: 30px;
-            background: #8c7b3f;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-        
-        .copyright {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(140, 123, 63, 0.3);
-            color: #8c7b3f;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .mission-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-    </style>
+    <title>Instituto Militar de Engenharia - Excelência em Educação e Defesa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
@@ -395,90 +13,122 @@
         <div class="header-container">
             <div class="logo">
                 <div class="logo-icon"></div>
-                <div class="logo-text">COMANDO <span>MILITAR</span></div>
+                <div class="logo-text">
+                    <span class="logo-main">Instituto Militar de Engenharia</span>
+                    <span class="logo-sub">Exército Brasileiro</span>
+                </div>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Operações</a></li>
-                    <li><a href="#">Equipe</a></li>
-                    <li><a href="#">Equipamentos</a></li>
+                    <li><a href="#" class="active">Início</a></li>
+                    <li><a href="#">Sobre o IME</a></li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="#">Pesquisa</a></li>
+                    <li><a href="#">Vestibular</a></li>
                     <li><a href="#">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Excelência em Engenharia Militar</h1>
+            <p>Formando líderes e inovadores para o Brasil e as Forças Armadas desde 1792</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Processo Seletivo</a>
+                <a href="#" class="btn btn-secondary">Conheça Nossos Cursos</a>
+            </div>
+        </div>
+    </section>
+    
     <!-- Main -->
     <main>
-        <section class="mission-briefing">
-            <h2>Briefing da Operação: Escudo Verde</h2>
-            <div class="mission-content">
-                <div class="mission-text">
-                    <p>A Operação Escudo Verde é uma missão estratégica de defesa das fronteiras nacionais contra forças hostis que ameaçam a soberania do território.</p>
-                    <p>Nossa missão é estabelecer pontos de controle nas regiões críticas e neutralizar qualquer ameaça com precisão e eficiência máxima.</p>
-                    <p>O sucesso desta operação depende da coordenação entre todas as unidades e da execução perfeita do plano tático estabelecido.</p>
-                    
-                    <div class="mission-stats">
-                        <div class="stat-card">
-                            <h4>Unidades Ativas</h4>
-                            <p>24</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Duração Estimada</h4>
-                            <p>72h</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Área de Operação</h4>
-                            <p>240 km²</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Nível de Risco</h4>
-                            <p>ALTO</p>
-                        </div>
+        <div class="section-title">
+            <h2>Sobre o IME</h2>
+        </div>
+        
+        <section class="about-ime">
+            <div class="about-text">
+                <h3>Uma Instituição Centenária</h3>
+                <p>O Instituto Militar de Engenharia (IME) é uma instituição de ensino superior pública brasileira, mantida pelo Exército Brasileiro, com sede no Rio de Janeiro. Fundado em 1792, é uma das mais antigas e prestigiadas escolas de engenharia das Américas.</p>
+                <p>O IME oferece formação de excelência em engenharia, combinando sólida base científica com valores militares, preparando profissionais para atuar tanto nas Forças Armadas quanto no setor civil.</p>
+                
+                <div class="mission-vision">
+                    <div class="mission-card">
+                        <h4>Missão</h4>
+                        <p>Formar oficiais engenheiros para o Exército Brasileiro e profissionais de excelência em engenharia para o país, produzir conhecimento científico e tecnológico e prestar serviços especializados à sociedade.</p>
+                    </div>
+                    <div class="vision-card">
+                        <h4>Visão</h4>
+                        <p>Ser reconhecido como centro de referência nacional e internacional na formação de engenheiros e na geração de conhecimento em ciência e tecnologia.</p>
                     </div>
                 </div>
-                <div class="mission-image">
-                    <!-- Imagem do mapa seria inserida aqui -->
-                </div>
+            </div>
+            <div class="about-image">
+                <!-- Imagem representativa do IME -->
             </div>
         </section>
         
-        <section class="soldiers-container">
-            <div class="soldier-card">
-                <div class="soldier-rank">Capitão</div>
-                <div class="soldier-name">Silva, R.</div>
-                <div class="soldier-photo">🪖</div>
-                <div class="soldier-info">
-                    Comandante da operação. 15 anos de experiência em combate. Especialista em estratégias de defesa.
-                </div>
+        <div class="section-title">
+            <h2>Cursos Oferecidos</h2>
+        </div>
+        
+        <section class="courses-container">
+            <div class="course-card">
+                <div class="course-icon">⚙️</div>
+                <h3 class="course-title">Engenharia de Fortificação e Construção</h3>
+                <p class="course-info">Formação especializada em estruturas defensivas, infraestrutura militar e técnicas avançadas de construção em cenários desafiadores.</p>
             </div>
             
-            <div class="soldier-card">
-                <div class="soldier-rank">Tenente</div>
-                <div class="soldier-name">Santos, M.</div>
-                <div class="soldier-photo">🎖️</div>
-                <div class="soldier-info">
-                    Líder do esquadrão Alpha. Especialista em reconhecimento e operações noturnas.
-                </div>
+            <div class="course-card">
+                <div class="course-icon">🛰️</div>
+                <h3 class="course-title">Engenharia Eletrônica e de Computação</h3>
+                <p class="course-info">Desenvolvimento de sistemas eletrônicos avançados, tecnologias de comunicação e sistemas computacionais para aplicações militares e civis.</p>
             </div>
             
-            <div class="soldier-card">
-                <div class="soldier-rank">Sargento</div>
-                <div class="soldier-name">Oliveira, A.</div>
-                <div class="soldier-photo">🔫</div>
-                <div class="soldier-info">
-                    Especialista em armamentos pesados. Responsável pelo suporte de fogo da equipe.
-                </div>
+            <div class="course-card">
+                <div class="course-icon">🧪</div>
+                <h3 class="course-title">Engenharia Química</h3>
+                <p class="course-info">Foco em processos químicos industriais, desenvolvimento de materiais avançados e tecnologias para defesa química e biológica.</p>
             </div>
             
-            <div class="soldier-card">
-                <div class="soldier-rank">Cabo</div>
-                <div class="soldier-name">Costa, F.</div>
-                <div class="soldier-photo">💣</div>
-                <div class="soldier-info">
-                    Especialista em explosivos e demolição. Responsável pela remoção de obstáculos.
-                </div>
+            <div class="course-card">
+                <div class="course-icon">🚀</div>
+                <h3 class="course-title">Engenharia de Materiais</h3>
+                <p class="course-info">Pesquisa e desenvolvimento de materiais de alta performance para aplicações aeroespaciais, blindagens e equipamentos militares.</p>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-icon">💻</div>
+                <h3 class="course-title">Engenharia de Computação</h3>
+                <p class="course-info">Formação em sistemas computacionais, cibersegurança, inteligência artificial e tecnologias da informação com aplicações em defesa.</p>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-icon">🛡️</div>
+                <h3 class="course-title">Engenharia de Armamento</h3>
+                <p class="course-info">Especialização no desenvolvimento, produção e manutenção de sistemas de armamento, munições e tecnologias de defesa.</p>
+            </div>
+        </section>
+        
+        <section class="stats-section">
+            <div class="stat-item">
+                <div class="stat-number">230</div>
+                <div class="stat-label">Anos de História</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Cursos de Engenharia</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Taxa de Empregabilidade</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Laboratórios de Pesquisa</div>
             </div>
         </section>
     </main>
@@ -487,18 +137,26 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section">
-                <h3>Sobre Nós</h3>
-                <p>O Comando Militar é uma unidade de elite especializada em operações estratégicas de defesa nacional. Nossa missão é proteger a soberania e a integridade territorial com excelência operacional.</p>
+                <h3>Sobre o IME</h3>
+                <p>O Instituto Militar de Engenharia é uma instituição de ensino superior pública, mantida pelo Exército Brasileiro, com tradição de excelência na formação de engenheiros desde 1792.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
             
             <div class="footer-section">
                 <h3>Links Rápidos</h3>
                 <ul>
-                    <li><a href="#">Política de Segurança</a></li>
-                    <li><a href="#">Termos de Serviço</a></li>
-                    <li><a href="#">Carreiras</a></li>
-                    <li><a href="#">Treinamento</a></li>
-                    <li><a href="#">Galeria</a></li>
+                    <li><a href="#">História do IME</a></li>
+                    <li><a href="#">Processo Seletivo</a></li>
+                    <li><a href="#">Editais e Concursos</a></li>
+                    <li><a href="#">Biblioteca</a></li>
+                    <li><a href="#">Eventos Acadêmicos</a></li>
+                    <li><a href="#">Portal do Aluno</a></li>
                 </ul>
             </div>
             
@@ -506,27 +164,27 @@
                 <h3>Contato</h3>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>Base Militar Alfa, Setor 7</div>
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>Praça General Tibúrcio, 80 - Urca, Rio de Janeiro - RJ, 22290-270</div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div>+55 (11) 3400-5678</div>
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>(21) 2546-7080</div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div>comando@operacoesmilitares.mil.br</div>
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>secretaria@ime.eb.br</div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">🕒</div>
-                        <div>24 horas / 7 dias</div>
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div>Segunda a Sexta: 08:00 - 17:00</div>
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="copyright">
-            &copy; 2023 Comando Militar. Todos os direitos reservados. | Operação Escudo Verde
+            &copy; 2023 Instituto Militar de Engenharia. Todos os direitos reservados. | Desenvolvido pela Divisão de Tecnologia da Informação do IME
         </div>
     </footer>
 </body>
