@@ -13,19 +13,21 @@
     }
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
+      /* padding: 20px; */
     }
     .tree {
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: center;
+      padding:12px;
     }
     .level {
       display: flex;
       width: 100%;
       justify-content: space-evenly;
-      margin: 20px 0;
+      margin: 2px 0;
+      gap: 2px;
     }
     .level-column {
       flex-direction: row;
@@ -33,7 +35,19 @@
       justify-content: center;
       align-items: center;
       margin: 20px 0;
+      margin-bottom: 10px;
+      border-radius: 5%;
+      border: 2px solid #8c7b3f;
     }
+    .level-column-cel {
+      width: 15%;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      border-radius: 5%;
+      border: 2px solid #8c7b3f;
+    }
+    
     .node {
       text-align: center;
       margin: 0 15px;
@@ -42,8 +56,9 @@
       width: 80px;
       height: 120px;
       object-fit: contain;
-      border-radius: 5%;
-      border: 2px solid #333;
+      margin: 20px 0 0 20px;
+      /* border-radius: 5%;
+      border: 2px solid #333; */
     }
     .node .name {
       margin-top: 5px;
@@ -58,24 +73,25 @@
         display: flex;
         gap: 20px;
         flex-direction: row;
-        
     }
 
     .teste-main {
         display: flex;
         justify-content: center;
+        border-color: greenyellow;
+        border-width: 2px;
     }
 
     @media (max-width: 768px) {
     .tree {
-        transform: scale(0.7); /* ou outro valor entre 0.3 e 1 */
+        transform: scale(0.9); /* ou outro valor entre 0.3 e 1 */
         transform-origin: top center;
     }
     }
 
     @media (max-width: 480px) {
     .tree {
-        transform: scale(0.35);
+        transform: scale(0.29);
         transform-origin: top center;
     }
     }
@@ -83,7 +99,6 @@
   </style>
 </head>
 <body>
-
     <header>
         <div class="header-container">
             <div class="logo">
@@ -107,6 +122,9 @@
             </div>
         </div>
     </header>
+    <div class="level">
+
+    </div>
     <div  class="section-title">
         <h2>Corpo de Alunos</h2>
     </div>
@@ -114,7 +132,7 @@
         
         <div class="tree">
           <!-- Nível 1 -->
-          <div class="level">
+          <div class="level-column-cel">
             <div class="node">
               <img src="assets/cmt_ca.jpg" alt="Comandante">
               <div class="name">Cmt C Alu Cel Rogério</div>
@@ -123,7 +141,7 @@
           
           <!-- <div class="line"></div> -->
 
-          <div class="level">
+          <div class="level-column-cel">
             <div class="node">
               <img src="assets/postos/tc.png" alt="Comandante">
               <div class="name">SCmt C Alu TC Ozias</div>
@@ -141,11 +159,11 @@
                     <div class="level">
                         <div class="node">
                           <img src="assets/postos/1_sarjento.png" alt="1ª Seção">
-                          <div class="name">Aux 1ª Seção 1º Sgt Danilo</div>
+                          <div class="name">Aux 1ª Seção 1º Sgt Duílio</div>
                         </div>
                         <div class="node">
                           <img src="assets/postos/1_sarjento.png" alt="2ª Seção">
-                          <div class="name">Aux 1° Seção 1º Sgt</div>
+                          <div class="name">Aux 1° Seção 1º Sgt Ernande</div>
                         </div>
 
                     </div>
@@ -155,16 +173,16 @@
                         <img src="assets/postos/maj.png" alt="3ª Seção">
                         <div class="name">Chefe 3ª Seção Maj Ávila</div>
                     </div>
-                <div class="level">
-                    <div class="node">
-                      <img src="assets/postos/1_sarjento.png" alt="1ª Seção">
-                      <div class="name">Aux 3ª Seção 1º Sgt De Paula</div>
+                    <div class="level">
+                        <div class="node">
+                        <img src="assets/postos/1_sarjento.png" alt="1ª Seção">
+                        <div class="name">Aux 3ª Seção 1º Sgt De Paula</div>
+                        </div>
+                        <div class="node">
+                        <img src="assets/postos/1_sarjento.png" alt="2ª Seção">
+                        <div class="name">Aux 3ª Seção 1º Sgt Vinicius Andrade</div>
+                        </div>
                     </div>
-                    <div class="node">
-                      <img src="assets/postos/1_sarjento.png" alt="2ª Seção">
-                      <div class="name">Aux 3ª Seção 1º Sgt Vinicius Andrade</div>
-                    </div>
-                </div>
 
                </div>
 
@@ -276,18 +294,18 @@
                         </div>
                         <div class="node">
                             <img src="assets/postos/cap.jpg" alt="1ª Cia Alu">
-                            <div class="name">Cmt CForm Cap</div>
+                            <div class="name">Cmt CForm Cap Lobo</div>
                         </div>
                     </div>
 
                     <div class="level">
                         <div class="node">
                             <img src="assets/postos/1_sarjento.png" alt="1ª Cia Alu">
-                            <div class="name">Aux 3ª Cia 1º Sgt</div>
+                            <div class="name">Aux 3ª Cia 1º Sgt Borba Junior</div>
                         </div>
                         <div class="node">
                             <img src="assets/postos/1_sarjento.png" alt="1ª Cia Alu">
-                            <div class="name">Aux 3ª Cia 1º Sgt</div>
+                            <div class="name">Aux 3ª Cia 1º Sgt Bruno Batista</div>
                         </div>
                     </div>
                     

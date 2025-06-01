@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Eventos - Instituto Militar de Engenharia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles_galery.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img class="imagem-ajustada" src="https://inscricoes.ime.eb.br/cfg/includes/img/logo.png" alt="">
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">Instituto Militar de Engenharia</span>
+                    <span class="logo-sub">Galeria de Eventos</span>
+                </div>
+            </div>
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </a>
+        </div>
+    </header>
+    
+    <!-- Galeria -->
+    <main class="gallery-container">
+        <h1 class="gallery-title">Eventos do IME</h1>
+        <p class="gallery-description">Registro dos principais eventos e momentos marcantes da vida acadêmica e militar do Instituto Militar de Engenharia.</p>
+        
+        <div class="gallery-grid">
+            <!-- Item 1 -->
+            <div class="gallery-item" onclick="openModal('formatura')">
+                <div class="gallery-image">
+                    <img src="assets/galeria/formatura_5_ano.png" alt="Formatura">
+                </div>
+                <div class="gallery-info">
+                    <div class="gallery-date">
+                        <i class="far fa-calendar-alt"></i> Evento Anual
+                    </div>
+                    <h3 class="gallery-event-title">Formatura dos Alunos</h3>
+                    <p class="gallery-event-description">Cerimônia de entrega de espadas e diplomas aos novos engenheiros militares formados pelo IME.</p>
+                    <div class="gallery-tags">
+                        <span class="tag">Formatura</span>
+                        <span class="tag">Cerimônia</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="gallery-item" onclick="openModal('entrega-platinas')">
+                <div class="gallery-image">
+                    <img src="/assets/galeria/entrega_platina.png" alt="Entrega de Platinas">
+                </div>
+                <div class="gallery-info">
+                    <div class="gallery-date">
+                        <i class="far fa-calendar-alt"></i> Evento Anual
+                    </div>
+                    <h3 class="gallery-event-title">Entrega das Platinas</h3>
+                    <p class="gallery-event-description">Evento que reúne militares e alunos que estão se tornando oficiais QEM.</p>
+                    <div class="gallery-tags">
+                        <span class="tag">Formatura</span>
+                        <span class="tag">Cerimônia</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="gallery-item" onclick="openModal('campo-basico')">
+                <div class="gallery-image">
+                    <img src="/assets/galeria/campo.png" alt="Campo Básico">
+                </div>
+                <div class="gallery-info">
+                    <div class="gallery-date">
+                        <i class="far fa-calendar-alt"></i> Evento Anual
+                    </div>
+                    <h3 class="gallery-event-title">Campo Básico</h3>
+                    <p class="gallery-event-description">Iniciação militar dos novos alunos do IME, com instruções de ordem unida, tiro, navegação terrestre e sobrevivência em campo.</p>
+                    <div class="gallery-tags">
+                        <span class="tag">Treinamento</span>
+                        <span class="tag">Instrução</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="gallery-item" onclick="openModal('visita-dqbrn')">
+                <div class="gallery-image">
+                    <img src="/assets/galeria/dqbrn.png" alt="Visita ao DQBRN">
+                </div>
+                <div class="gallery-info">
+                    <div class="gallery-date">
+                        <i class="far fa-calendar-alt"></i> Evento Periódico
+                    </div>
+                    <h3 class="gallery-event-title">Visita ao DQBRN</h3>
+                    <p class="gallery-event-description">Visita técnica ao Departamento de Química, Biologia e Defesa Química, Biológica, Radiológica e Nuclear do Exército.</p>
+                    <div class="gallery-tags">
+                        <span class="tag">Visita</span>
+                        <span class="tag">Técnica</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 5 -->
+            <div class="gallery-item" onclick="openModal('estagio-selva')">
+                <div class="gallery-image">
+                    <img src="/assets/galeria/selva.png" alt="Guerra na Selva">
+                </div>
+                <div class="gallery-info">
+                    <div class="gallery-date">
+                        <i class="far fa-calendar-alt"></i> Evento Anual
+                    </div>
+                    <h3 class="gallery-event-title">Guerra na Selva</h3>
+                    <p class="gallery-event-description">Treinamento prático de engenharia militar em ambiente simulado de operações reais.</p>
+                    <div class="gallery-tags">
+                        <span class="tag">Treinamento</span>
+                        <span class="tag">Selva</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 6 -->
+            <div class="gallery-item" onclick="openModal('sioesp')">
+                <div class="gallery-image">
+                    <img src="assets/galeria/lealdade.png" alt="SIOpEsp">
+                </div>
+                <div class="gallery-info">
+                    <div class="gallery-date">
+                        <i class="far fa-calendar-alt"></i> Evento Periódico
+                    </div>
+                    <h3 class="gallery-event-title">Participação no SIOpEsp</h3>
+                    <p class="gallery-event-description">Alunos do IME participam de um ciclo de instruções no Centro de Instrução de Operações Especiais.</p>
+                    <div class="gallery-tags">
+                        <span class="tag">Instrução</span>
+                        <span class="tag">Operações</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 7 -->
+            <div class="gallery-item" onclick="openModal('estagio-montanha')">
+                <div class="gallery-image">
+                    <img src="assets/galeria/montanha.png" alt="Estágio de Montanha">
+                </div>
+                <div class="gallery-info">
+                    <div class="gallery-date">
+                        <i class="far fa-calendar-alt"></i> Evento Anual
+                    </div>
+                    <h3 class="gallery-event-title">Estágio de Montanha</h3>
+                    <p class="gallery-event-description">Estágio realizado no Centro de Instrução de Montanha em Juiz de Fora/MG.</p>
+                    <div class="gallery-tags">
+                        <span class="tag">Treinamento</span>
+                        <span class="tag">Montanha</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Modal -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-image">
+                <img id="modalEventImage" src="" alt="">
+            </div>
+            <div class="modal-info">
+                <h2 class="modal-title" id="modalEventTitle"></h2>
+                <p class="modal-description" id="modalEventDescription"></p>
+                <div class="modal-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Local</div>
+                        <div class="detail-value" id="modalEventLocation"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Participantes</div>
+                        <div class="detail-value" id="modalEventParticipants"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Organização</div>
+                        <div class="detail-value" id="modalEventOrganization"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <p>Galeria de Eventos do Instituto Militar de Engenharia</p>
+                <p>Registro histórico dos principais momentos da instituição</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Instituto Militar de Engenharia. Todos os direitos reservados. | Desenvolvido pela Divisão de Tecnologia da Turma XXVIII do IME
+        </div>
+    </footer>
+    
+    <script>
+        // Dados dos eventos
+        const events = {
+            'formatura': {
+                title: 'Formatura dos Alunos',
+                image: 'assets/galeria/formatura_5_ano.png',
+                description: 'A solenidade de formatura do Instituto Militar de Engenharia marca a conclusão do ciclo de formação de engenheiros militares. O evento conta com a presença de autoridades militares, familiares e convidados, sendo realizado no pátio principal do IME. Durante a cerimônia, os formandos recebem suas espadas e diplomas, simbolizando sua entrada no oficialato do Exército Brasileiro e na comunidade de engenheiros do país.',
+                location: 'Pátio Principal do IME - Rio de Janeiro',
+                participants: 'Formandos, autoridades militares e familiares',
+                organization: 'Diretoria de Ensino do IME'
+            },
+            'campo-basico': {
+                title: 'Campo Básico',
+                image: '/assets/galeria/campo.png',
+                description: 'O Campo Básico marca a iniciação militar dos novos alunos do IME, com instruções de ordem unida, tiro, navegação terrestre e sobrevivência em campo. Durante este período, os calouros aprendem os fundamentos da vida militar enquanto desenvolvem espírito de corpo e disciplina.',
+                location: 'Área de Instrução do IME - Rio de Janeiro',
+                participants: 'Calouros do IME e instrutores militares',
+                organization: 'Seção de Ensino Militar'
+            },
+            'entrega-platinas': {
+                title: 'Entrega das Platinas',
+                image: '/assets/galeria/entrega_platina.png',
+                description: 'Cerimônia tradicional onde os alunos recebem suas platinas, símbolo do curso de engenharia militar. O evento marca uma fase importante da formação e conta com a presença de familiares e autoridades militares.',
+                location: 'Pátio das Bandeiras - IME',
+                participants: 'Alunos, familiares e autoridades',
+                organization: 'Diretoria de Ensino do IME'
+            },
+            'estagio-selva': {
+                title: 'Estágio de Guerra na Selva',
+                image: '/assets/galeria/selva.png',
+                description: 'Estágio realizado no CIGS (Centro de Instrução de Guerra na Selva) em Manaus, onde os alunos vivenciam técnicas de sobrevivência, movimentação e combate em ambiente de selva. O treinamento inclui instruções de orientação, armadilhas, patrulhas e operações especiais em ambiente amazônico.',
+                location: 'CIGS - Manaus/AM',
+                participants: 'Alunos do IME',
+                organization: 'Centro de Instrução de Guerra na Selva'
+            },
+            'visita-dqbrn': {
+                title: 'Visita ao DQBRN',
+                image: 'assets/galeria/dqbrn.png',
+                description: 'Visita técnica ao Departamento de Química, Biologia e Defesa Química, Biológica, Radiológica e Nuclear (DQBRN) do Exército, onde os alunos conhecem equipamentos de detecção, proteção e descontaminação, além de laboratórios especializados em ameaças NBC.',
+                location: 'DQBRN - Rio de Janeiro',
+                participants: 'Alunos do IME',
+                organization: 'Departamento de Engenharia Química do IME'
+            },
+            'estagio-montanha': {
+                title: 'Estágio de Montanha',
+                image: '/assets/galeria/montanha.png',
+                description: 'Estágio realizado no Centro de Instrução de Montanha (CIM) em Juiz de Fora/MG, onde os alunos aprendem técnicas de progressão em terreno montanhoso, escalada em rocha, rapel, sobrevivência em altitude e primeiros socorros em ambiente de montanha.',
+                location: 'Centro de Instrução de Montanha - Juiz de Fora/MG',
+                participants: 'Alunos do IME selecionados',
+                organization: 'Centro de Instrução de Montanha'
+            },
+            'sioesp': {
+                title: 'Participação no SIOpEsp',
+                image: '/assets/galeria/lealdade.png',
+                description: 'Instrução especializada sobre o Sistema de Operações Especiais do Exército Brasileiro, ministrada por oficiais do Comando de Operações Especiais (COpEsp). Os alunos aprendem sobre planejamento, condução e apoio a operações especiais, incluindo técnicas de infiltração, ações diretas e reconhecimento especial.',
+                location: 'IME e Campo de Instrução da Vila Militar',
+                participants: 'Alunos do IME',
+                organization: 'Comando de Operações Especiais'
+            }
+        };
+
+        // Funções para o modal
+        function openModal(eventId) {
+            const event = events[eventId];
+            if (!event) return;
+            
+            const modal = document.getElementById('eventModal');
+            document.getElementById('modalEventImage').src = event.image;
+            document.getElementById('modalEventTitle').textContent = event.title;
+            document.getElementById('modalEventDescription').textContent = event.description;
+            document.getElementById('modalEventLocation').textContent = event.location;
+            document.getElementById('modalEventParticipants').textContent = event.participants;
+            document.getElementById('modalEventOrganization').textContent = event.organization;
+            
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            
+            modal.style.display = 'flex';
+        }
+        
+        function closeModal() {
+            document.getElementById('eventModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            document.body.style.position = 'static';
+        }
+        
+        // Fechar modal ao clicar fora do conteúdo
+        window.onclick = function(event) {
+            const modal = document.getElementById('eventModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
