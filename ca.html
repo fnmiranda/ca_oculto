@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Corpo de Alunos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styleca.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .tree {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    .level {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      margin: 20px 0;
+    }
+    .level-column {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-evenly;
+      margin: 20px 0;
+    }
+    .node {
+      text-align: center;
+      margin: 0 15px;
+    }
+    .node img {
+      width: 80px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 20%;
+      border: 2px solid #333;
+    }
+    .node .name {
+      margin-top: 5px;
+      font-weight: bold;
+    }
+    .line {
+      height: 30px;
+      border-left: 2px solid #000;
+      margin: 0 auto;
+    }
+    .header-buttonLogo {
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img class="imagem-ajustada" src="https://inscricoes.ime.eb.br/cfg/includes/img/logo.png" alt="">
+                </div>
+                
+                <div class="logo-text">
+                    <span class="logo-main">Instituto Militar de Engenharia</span>
+                    <span class="logo-sub">Hierarquia Militar</span>
+                </div>
+            </div>
+            <div class="header-buttonLogo">
+                <a href="index.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </a>
+                <div class="logo-icon">
+                    <img class="imagem-ajustada" src="https://acesso.dgp.eb.mil.br/img/logo-dgp.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div  class="section-title">
+            <h2>Corpo de Alunos</h2>
+        </div>
+        
+        <div class="tree">
+          <!-- Nível 1 -->
+          <div class="level">
+            <div class="node">
+              <img src="assets/cmt_ca.jpg" alt="Comandante">
+              <div class="name">Cmt C Alu Cel Rogério</div>
+            </div>
+          </div>
+          
+          <!-- <div class="line"></div> -->
+
+          <div class="level">
+            <div class="node">
+              <img src="assets/cmt_ca.jpg" alt="Comandante">
+              <div class="name">SCmt C Alu TC Ozias</div>
+            </div>
+          </div>
+        
+          <!-- Conexão -->
+
+          <!-- Nível 2 -->
+          <div class="level">
+            
+            
+            
+          </div>
+          <!-- Nível 3 -->
+           <div class="level">
+               <div class="level-column">
+                    <div class="node" >
+                        <img src="assets/cmt_ca.jpg" alt="1ª Seção">
+                        <div class="name">Chefe 1ª Seção Cap Keller</div>
+                    </div>
+                    <div class="level">
+                        <div class="node">
+                          <img src="assets/cmt_ca.jpg" alt="1ª Seção">
+                          <div class="name">Aux 1ª Seção 1º Sgt </div>
+                        </div>
+                        <div class="node">
+                          <img src="assets/cmt_ca.jpg" alt="2ª Seção">
+                          <div class="name">Aux 1ª Seção 1º Sgt</div>
+                        </div>
+
+                    </div>
+               </div>
+               <div class="level-column">
+                    <div class="node">
+                        <img src="assets/cmt_ca.jpg" alt="3ª Seção">
+                        <div class="name">Chefe 3ª Seção Maj Ávila</div>
+                    </div>
+                <div class="level">
+                    <div class="node">
+                      <img src="assets/cmt_ca.jpg" alt="1ª Seção">
+                      <div class="name">Aux 3ª Seção 1º Sgt</div>
+                    </div>
+                    <div class="node">
+                      <img src="assets/cmt_ca.jpg" alt="2ª Seção">
+                      <div class="name">Aux 3ª Seção 1º Sgt</div>
+                    </div>
+                </div>
+
+               </div>
+
+               <div class="level-column">
+                <div class="node" >
+                    <img src="assets/cmt_ca.jpg" alt="4ª Seção">
+                    <div class="name">Chefe 4ª Seção Cap Moratto</div>
+                </div>
+                <div class="level">
+                    <div class="node">
+                      <img src="assets/cmt_ca.jpg" alt="1ª Seção">
+                      <div class="name">Aux 4ª Seção 1º Sgt</div>
+                    </div>
+                    <div class="node">
+                      <img src="assets/cmt_ca.jpg" alt="2ª Seção">
+                      <div class="name">Aux 4ª Seção 1º Sgt</div>
+                    </div>
+                    <div class="node">
+                      <img src="assets/cmt_ca.jpg" alt="2ª Seção">
+                      <div class="name">Aux 4ª Seção 2º Sgt</div>
+                    </div>
+                </div>
+               </div>
+           </div>
+        
+          <!-- Adicione mais níveis conforme necessário -->
+          <div class="level">
+            <div class="level">
+                <div class="level-column">
+                    <div class="level">
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                    </div>
+                    <div class="level">
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                    </div>
+                    <div class="level">
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="level">
+                <div class="level-column">
+                    <div class="level">
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">2ª Cia Alu</div>
+                        </div>
+                    </div>
+                    <div class="level">
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                    </div>
+                    <div class="level">
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="level">
+                <div class="level-column">
+                    <div class="level">
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">3ª Cia Alu</div>
+                        </div>
+                    </div>
+                    <div class="level">
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                    </div>
+                    <div class="level">
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                        <div class="node">
+                            <img src="assets/cmt_ca.jpg" alt="1ª Cia Alu">
+                            <div class="name">1ª Cia Alu</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        
+          </div>
+        </div>
+    </main>
+
+    <footer>        
+        <div class="copyright">
+            &copy; 2025 Instituto Militar de Engenharia. Todos os direitos reservados. | Desenvolvido pela Divisão de Tecnologia da Turma XXVIII do IME
+        </div>
+    </footer>
+
+</body>
+</html>
