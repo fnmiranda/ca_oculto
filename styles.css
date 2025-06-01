@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -35,7 +39,7 @@ header {
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -50,25 +54,32 @@ header {
 }
 
 .logo-icon {
-    width: 60px;
+    width: 10%;
     height: 60px;
     background: var(--gold);
-    border-radius: 50%;
+    /* border-radius: 50%; */
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid var(--light-gold);
     position: relative;
     overflow: hidden;
+    object-fit: contain;
 }
 
-.logo-icon:before {
+.imagem-ajustada {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* .logo-icon:before {
     content: "IME";
     position: absolute;
     font-weight: bold;
     font-size: 1.2rem;
     color: var(--army-green);
-}
+} */
 
 .logo-text {
     font-size: 1.8rem;
